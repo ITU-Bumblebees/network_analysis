@@ -1,1 +1,3 @@
-# network_analysis
+# Network Analysis
+
+Github repository for the Network Analysis project.
