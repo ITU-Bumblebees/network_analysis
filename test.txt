@@ -1,1 +1,3 @@
-waow
+git remote set-url origin git@github.com:ITU-Bumblebees/network_analysis.git
+
+^ use this command to avoid warning messages every time you push/pull
