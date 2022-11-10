@@ -23,3 +23,7 @@ Hubert: Updating Graph.py, issues with pulling since project has been updated.
 Chris: Doing the same thing as Germán
 Paula: Helping Chris, researching genes.
 Laurids: Writing this doc, messing around with org.
+
+Next time:
+Germán pushes project.ipynb
+Explain what everyone did last. Formulate questions for the supervision.
