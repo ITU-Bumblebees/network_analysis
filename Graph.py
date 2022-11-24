@@ -31,7 +31,7 @@ class Graph:
         nx.set_node_attributes(self.G, self.attributes_dict)
         self.G.add_edges_from(self.edges)
 
-        return self.G
+        return self.G, self.d_nodes
 
     def get_projected_graph_deseases(self):
         G = self.get_bipartite_graph()
@@ -44,3 +44,5 @@ class Graph:
     def get_attributes(self):
         return self.attributes
 
+    def get_d_nodes(self):
+        return self.d_nodes
