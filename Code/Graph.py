@@ -7,8 +7,8 @@ from networkx.algorithms import bipartite
 class Graph:
     def __init__(self):
         #read the data from the csv file
-        self.attributes= pd.read_csv('Data/nodeattribute.csv', delimiter=';') #the dataframe with all the attributes
-        self.edgelist= pd.read_csv('Data/edgelist.csv',delimiter=';')
+        self.attributes= pd.read_csv('../Data/nodeattribute.csv', delimiter=';') #the dataframe with all the attributes
+        self.edgelist= pd.read_csv('../Data/edgelist.csv',delimiter=';')
 
         #make two lists of the attributes: one for genes and one for diseases
         self.g_attributes= self.attributes[self.attributes['0']=='gene'] #gene attributes

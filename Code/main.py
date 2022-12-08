@@ -69,18 +69,21 @@ class GraphAnalysis:
         for node in Gp.nodes():
             group = Gp.nodes[node]['1']
             count = 0 
-            num_neighbors= len([Gp.neighbors(node)]) 
+            num_neighbors= len(list(Gp.neighbors(node))) 
             for n_node in list(Gp.neighbors(node)):
                 n_group= Gp.nodes[n_node]['1']
                 
                 if group == n_group: 
                     count +=1
-                    
-            types_diseases[group].append(count/num_neighbors)
-            
+
+            if num_neighbors == 0:
+                pass 
+            else:    
+                types_diseases[group].append(count/num_neighbors)
         for key,val in types_diseases.items():
-            value = sum(val) / len(val)
-            types_diseases.update({key: value})
+            value = np.round(sum(val) / len(val), decimals=3)
+            types_diseases.update({key: [value]})
+            
             self.homophily_dict[key].append(value)
 
 
@@ -122,6 +125,6 @@ if __name__ == '__main__':
     nodes = [3823, 3957, 3677, 2000, 3180, 2840, 3251, 3250, 3985, 2127, 3495, 3220, 3852, 3514, 3795, 3798, 3799, 3800, 2214, 2309]
     ga = GraphAnalysis(G, nodes, d_nodes)
     ga1 = GraphAnalysis(G, nodes_w, d_nodes)
-    print(ga.final_analysis()[2])
+    print(ga.final_analysis()[0])
     print(' ')
-    print(ga1.final_analysis()[2])
+    print(ga1.final_analysis()[0])
